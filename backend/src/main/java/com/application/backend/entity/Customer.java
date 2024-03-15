@@ -1,4 +1,4 @@
-package com.application.backend;
+package com.application.backend.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -20,14 +20,16 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "customer_id", nullable = false)
+    @Column(name = "customer_id")
     private Long customerId;
+    @Column(name = "customer_name", nullable = false)
     private String customerName;
+    @Column(name = "customer_email", nullable = false)
     private String customerEmail;
+    @Column(name = "customer_address", nullable = false)
     private String customerAddress;
 }
